@@ -1,11 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net6.0-windows7.0": {}
+    "net6.0-windows10.0.22621": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net6.0-windows7.0": []
+    "net6.0-windows10.0.22621": []
   },
   "packageFolders": {
     "C:\\Users\\Serrperry\\.nuget\\packages\\": {},
@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Serrperry\\Desktop\\2DAM\\DdI\\Tema1\\WinFormsApp\\WinFormsApp\\WinFormsApp.vbproj",
+      "projectUniqueName": "D:\\2DAM\\DdI\\1T\\Tema1\\WinFormsApp\\WinFormsApp\\WinFormsApp.vbproj",
       "projectName": "WinFormsApp",
-      "projectPath": "C:\\Users\\Serrperry\\Desktop\\2DAM\\DdI\\Tema1\\WinFormsApp\\WinFormsApp\\WinFormsApp.vbproj",
+      "projectPath": "D:\\2DAM\\DdI\\1T\\Tema1\\WinFormsApp\\WinFormsApp\\WinFormsApp.vbproj",
       "packagesPath": "C:\\Users\\Serrperry\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Serrperry\\Desktop\\2DAM\\DdI\\Tema1\\WinFormsApp\\WinFormsApp\\obj\\",
+      "outputPath": "D:\\2DAM\\DdI\\1T\\Tema1\\WinFormsApp\\WinFormsApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -29,15 +29,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows10.0.22621.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows",
+        "net6.0-windows10.0.22621": {
+          "targetAlias": "net6.0-windows10.0.22621.0",
           "projectReferences": {}
         }
       },
@@ -48,8 +48,8 @@
       }
     },
     "frameworks": {
-      "net6.0-windows7.0": {
-        "targetAlias": "net6.0-windows",
+      "net6.0-windows10.0.22621": {
+        "targetAlias": "net6.0-windows10.0.22621.0",
         "imports": [
           "net461",
           "net462",
@@ -61,8 +61,17 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.22621.27, 10.0.22621.27]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref": {
             "privateAssets": "all"
           },
           "Microsoft.WindowsDesktop.App.WindowsForms": {
