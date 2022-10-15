@@ -144,27 +144,31 @@ Public Class Form1
         g.DrawString("Circurferencia:" & (3.14 * (r * 2)), New Font("Arial", 10, FontStyle.Bold), c, New Point(y, (x * 2) + 10))
         g.DrawString("Diametro:" & (r * 2), New Font("Arial", 10, FontStyle.Bold), c, New Point(y, (x * 2) + 20))
     End Sub
-
+    Dim aux10 = True
     Private Sub Ejercicio10ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles Ejercicio10ToolStripMenuItem.Click
+
+        Me.Height = Screen.PrimaryScreen.Bounds.Height
+        Me.Width = Screen.PrimaryScreen.Bounds.Width
         g = Me.CreateGraphics
         l_Inicio.Visible = False
         g.Clear(Me.BackColor)
-        Me.Height = Screen.PrimaryScreen.Bounds.Height
-        Me.Width = Screen.PrimaryScreen.Bounds.Width
         Me.Location = New Point(0, 0)
-        Dim aux = True
-        While aux
-            For index = 1 To 50
-                Dim tecla As New System.Windows.Forms.Keys()
-                Dim color As New System.Drawing.Pen(System.Drawing.Color.FromArgb(random.Next(1, 255), random.Next(1, 255), random.Next(1, 255)))
-                Dim p1 As New Point
-                g.DrawLine(color, New Point(random.Next(1, Me.Size.Height), random.Next(1, Me.Size.Width)), New Point(random.Next(1, Me.Size.Height), random.Next(1, Me.Size.Width)))
+        aux10 = False
 
-                If tecla = Keys.F4 Then
-                    Me.Close()
-                End If
+        While True
+            For index = 1 To 50
+                Application.DoEvents()
+                Threading.Thread.Sleep(400)
+                Dim color As New System.Drawing.Pen(System.Drawing.Color.FromArgb(random.Next(1, 255), random.Next(1, 255), random.Next(1, 255)))
+                g.DrawLine(color, New Point(random.Next(1, Me.Height), random.Next(1, Me.Width)), New Point(random.Next(1, Me.Height), random.Next(1, Me.Width)))
             Next
             g.Clear(Me.BackColor)
         End While
+    End Sub
+
+    Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
+        If aux10 = False Then
+            Me.Close()
+        End If
     End Sub
 End Class

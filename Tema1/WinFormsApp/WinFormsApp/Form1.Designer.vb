@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.Ejercicio1ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Ejercicio2ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -34,7 +35,7 @@ Partial Class Form1
         Me.Ejercicio9ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Ejercicio10ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.l_Inicio = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Tiempo = New System.Windows.Forms.Timer(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -116,21 +117,16 @@ Partial Class Form1
         Me.l_Inicio.TabIndex = 1
         Me.l_Inicio.Text = "Elegir la actividad que se quiere ver"
         '
-        'Button1
+        'Tiempo
         '
-        Me.Button1.Location = New System.Drawing.Point(725, 27)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Tiempo.Enabled = True
+        Me.Tiempo.Interval = 1
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.l_Inicio)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -155,5 +151,5 @@ Partial Class Form1
     Friend WithEvents Ejercicio9ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Ejercicio10ToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents l_Inicio As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Tiempo As Timer
 End Class
