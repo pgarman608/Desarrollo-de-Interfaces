@@ -132,9 +132,21 @@ Public Class Editor
         Dim cl As Integer = texto.GetLineFromCharIndex(index)
         Dim cr As Integer = index - texto.GetFirstCharIndexFromLine(cl)
         position.Text = "Posicion: " & cl & " | " & cr
+        nLetrasTSSL.Text = "Numero de letras: " & texto.Text.Length
     End Sub
 
     Private Sub imprimirTSMI_Click(sender As Object, e As EventArgs) Handles imprimirTSMI.Click
-        Me.PrintPreviewDialog1.Show()
+        cImprimir.Document = PrintDocument1
+        cImprimir.PrinterSettings = PrintDocument1.PrinterSettings
+        cImprimir.AllowCurrentPage = True
+        If cImprimir.ShowDialog() = DialogResult.OK Then
+            PrintDocument1.PrinterSettings = cImprimir.PrinterSettings
+            PrintDocument1.Print()
+        End If
+    End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim color = New SolidBrush(cColor.Color)
+        e.Graphics.DrawString(texto.Text, cFont.Font, color, 1, 9)
     End Sub
 End Class

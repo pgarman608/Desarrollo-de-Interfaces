@@ -57,10 +57,10 @@ Partial Class Barra
         '
         'asciiScroll
         '
-        Me.asciiScroll.Location = New System.Drawing.Point(159, 194)
-        Me.asciiScroll.Maximum = 255
+        Me.asciiScroll.Location = New System.Drawing.Point(67, 194)
+        Me.asciiScroll.Maximum = 300
         Me.asciiScroll.Name = "asciiScroll"
-        Me.asciiScroll.Size = New System.Drawing.Size(277, 17)
+        Me.asciiScroll.Size = New System.Drawing.Size(473, 17)
         Me.asciiScroll.TabIndex = 3
         Me.asciiScroll.Value = 1
         '

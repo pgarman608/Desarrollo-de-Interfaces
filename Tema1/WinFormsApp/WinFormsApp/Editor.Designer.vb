@@ -59,6 +59,7 @@ Partial Class Editor
         Me.cColor = New System.Windows.Forms.ColorDialog()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.position = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.nLetrasTSSL = New System.Windows.Forms.ToolStripStatusLabel()
         Me.cImprimir = New System.Windows.Forms.PrintDialog()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
@@ -292,7 +293,7 @@ Partial Class Editor
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.position})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.position, Me.nLetrasTSSL})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 375)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(723, 22)
@@ -305,9 +306,18 @@ Partial Class Editor
         Me.position.Size = New System.Drawing.Size(53, 17)
         Me.position.Text = "Position:"
         '
+        'nLetrasTSSL
+        '
+        Me.nLetrasTSSL.Name = "nLetrasTSSL"
+        Me.nLetrasTSSL.Size = New System.Drawing.Size(101, 17)
+        Me.nLetrasTSSL.Text = "Numero de letras:"
+        '
         'cImprimir
         '
         Me.cImprimir.UseEXDialog = True
+        '
+        'PrintDocument1
+        '
         '
         'PrintPreviewDialog1
         '
@@ -381,4 +391,5 @@ Partial Class Editor
     Friend WithEvents cImprimir As PrintDialog
     Friend WithEvents PrintDocument1 As Printing.PrintDocument
     Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
+    Friend WithEvents nLetrasTSSL As ToolStripStatusLabel
 End Class
