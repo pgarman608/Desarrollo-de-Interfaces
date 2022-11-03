@@ -1,4 +1,6 @@
-﻿Public Class Form1
+﻿Imports Microsoft.Win32
+
+Public Class Form1
     Dim numCamiones As Integer
     Dim numCamionetas As Integer
     Dim numFurgonetas As Integer
@@ -32,8 +34,18 @@
             MsgBox("El numero de camiones tiene que de estar entre 0 y 8")
         End If
     End Sub
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gbSacas.Visible = False
+        fecha.Text = fecha.Text + System.DateTime.Today
+
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles urlEmpresa.LinkClicked
+        Dim BrowseProc As New Process
+        BrowseProc.StartInfo.FileName = "http://google.com"
+        BrowseProc.StartInfo.UseShellExecute = True
+        BrowseProc.StartInfo.RedirectStandardOutput = False
+        BrowseProc.Start()
+        BrowseProc.Dispose()
     End Sub
 End Class

@@ -43,11 +43,15 @@ Partial Class Form1
         Me.btAniadir = New System.Windows.Forms.Button()
         Me.lbSacaGb = New System.Windows.Forms.Label()
         Me.sbSacas = New System.Windows.Forms.HScrollBar()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.urlEmpresa = New System.Windows.Forms.LinkLabel()
+        Me.fecha = New System.Windows.Forms.Label()
         Me.gbCamiones.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbSacas.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'gbCamiones
@@ -70,7 +74,7 @@ Partial Class Form1
         Me.gbCamiones.Controls.Add(Me.btElegirCamions)
         Me.gbCamiones.Location = New System.Drawing.Point(12, 12)
         Me.gbCamiones.Name = "gbCamiones"
-        Me.gbCamiones.Size = New System.Drawing.Size(294, 249)
+        Me.gbCamiones.Size = New System.Drawing.Size(288, 249)
         Me.gbCamiones.TabIndex = 0
         Me.gbCamiones.TabStop = False
         Me.gbCamiones.Text = "Elegir Nº Veiculos"
@@ -104,7 +108,7 @@ Partial Class Form1
         '
         'PictureBox3
         '
-        Me.PictureBox3.Image = Global.WinFormsApp.My.Resources.Resource1.furgoneta
+        Me.PictureBox3.Image = Global.WinFormsApp.Resource1.furgoneta
         Me.PictureBox3.Location = New System.Drawing.Point(213, 165)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(61, 61)
@@ -114,7 +118,7 @@ Partial Class Form1
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.WinFormsApp.My.Resources.Resource1.camioneta
+        Me.PictureBox2.Image = Global.WinFormsApp.Resource1.camioneta
         Me.PictureBox2.Location = New System.Drawing.Point(87, 165)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(110, 61)
@@ -124,7 +128,7 @@ Partial Class Form1
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.WinFormsApp.My.Resources.Resource1.camion
+        Me.PictureBox1.Image = Global.WinFormsApp.Resource1.camion
         Me.PictureBox1.Location = New System.Drawing.Point(10, 165)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(61, 61)
@@ -215,7 +219,7 @@ Partial Class Form1
         '
         'btElegirCamions
         '
-        Me.btElegirCamions.Location = New System.Drawing.Point(213, 127)
+        Me.btElegirCamions.Location = New System.Drawing.Point(207, 127)
         Me.btElegirCamions.Name = "btElegirCamions"
         Me.btElegirCamions.Size = New System.Drawing.Size(75, 23)
         Me.btElegirCamions.TabIndex = 0
@@ -227,7 +231,7 @@ Partial Class Form1
         Me.gbSacas.Controls.Add(Me.btAniadir)
         Me.gbSacas.Controls.Add(Me.lbSacaGb)
         Me.gbSacas.Controls.Add(Me.sbSacas)
-        Me.gbSacas.Location = New System.Drawing.Point(430, 12)
+        Me.gbSacas.Location = New System.Drawing.Point(532, 12)
         Me.gbSacas.Name = "gbSacas"
         Me.gbSacas.Size = New System.Drawing.Size(268, 124)
         Me.gbSacas.TabIndex = 1
@@ -254,19 +258,49 @@ Partial Class Form1
         '
         'sbSacas
         '
-        Me.sbSacas.Location = New System.Drawing.Point(0, 43)
+        Me.sbSacas.Location = New System.Drawing.Point(6, 43)
         Me.sbSacas.Maximum = 3009
         Me.sbSacas.Minimum = 1000
         Me.sbSacas.Name = "sbSacas"
-        Me.sbSacas.Size = New System.Drawing.Size(265, 17)
+        Me.sbSacas.Size = New System.Drawing.Size(259, 17)
         Me.sbSacas.TabIndex = 0
         Me.sbSacas.Value = 1000
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.urlEmpresa)
+        Me.GroupBox1.Controls.Add(Me.fecha)
+        Me.GroupBox1.Location = New System.Drawing.Point(306, 12)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(220, 70)
+        Me.GroupBox1.TabIndex = 3
+        Me.GroupBox1.TabStop = False
+        '
+        'urlEmpresa
+        '
+        Me.urlEmpresa.AutoSize = True
+        Me.urlEmpresa.Location = New System.Drawing.Point(44, 40)
+        Me.urlEmpresa.Name = "urlEmpresa"
+        Me.urlEmpresa.Size = New System.Drawing.Size(148, 15)
+        Me.urlEmpresa.TabIndex = 1
+        Me.urlEmpresa.TabStop = True
+        Me.urlEmpresa.Text = "Informacion de la empresa"
+        '
+        'fecha
+        '
+        Me.fecha.AutoSize = True
+        Me.fecha.Location = New System.Drawing.Point(6, 19)
+        Me.fecha.Name = "fecha"
+        Me.fecha.Size = New System.Drawing.Size(44, 15)
+        Me.fecha.TabIndex = 0
+        Me.fecha.Text = "Fecha: "
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(710, 400)
+        Me.ClientSize = New System.Drawing.Size(812, 468)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbSacas)
         Me.Controls.Add(Me.gbCamiones)
         Me.Name = "Form1"
@@ -278,6 +312,8 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbSacas.ResumeLayout(False)
         Me.gbSacas.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -303,4 +339,7 @@ Partial Class Form1
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents urlEmpresa As LinkLabel
+    Friend WithEvents fecha As Label
 End Class
