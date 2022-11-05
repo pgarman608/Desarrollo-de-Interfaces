@@ -15,3 +15,4 @@ C:\Users\usuario\Desktop\2DAM\Desarrollo-de-Interfaces\Tema1\WinFormsApp\WinForm
 C:\Users\usuario\Desktop\2DAM\Desarrollo-de-Interfaces\Tema1\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\WinFormsApp.pdb
 C:\Users\usuario\Desktop\2DAM\Desarrollo-de-Interfaces\Tema1\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\WinFormsApp.genruntimeconfig.cache
 C:\Users\usuario\Desktop\2DAM\Desarrollo-de-Interfaces\Tema1\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\ref\WinFormsApp.dll
+C:\Users\usuario\Desktop\2DAM\Desarrollo-de-Interfaces\Tema1\WinFormsApp\WinFormsApp\obj\Debug\net6.0-windows\WinFormsApp.Resource1.resources

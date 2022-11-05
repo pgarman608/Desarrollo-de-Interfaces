@@ -127,4 +127,10 @@
   <data name="furgoneta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\furgoneta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pala" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\pala.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="saca" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\saca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
