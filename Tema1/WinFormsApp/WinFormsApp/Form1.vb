@@ -1,4 +1,5 @@
 ﻿
+Imports System.Linq.Expressions
 Imports WinFormsApp.My.Resources
 
 Public Class Form1
@@ -25,24 +26,29 @@ Public Class Form1
         descargarSaca()
     End Sub
     Private Sub btElegirCamions_Click(sender As Object, e As EventArgs) Handles btElegirCamions.Click
-        If mtbCamion.Text <= 8 And mtbCamion.Text >= 0 And Not (mtbCamioneta.Text.Equals("")) Then
-            numCamiones = mtbCamion.Text
-            If mtbCamioneta.Text <= 8 And mtbCamioneta.Text >= 0 And Not (mtbCamioneta.Text.Equals("")) Then
-                numCamionetas = mtbCamioneta.Text
-                If mtbFurgoneta.Text <= 8 And mtbFurgoneta.Text >= 0 And Not (mtbCamioneta.Text.Equals("")) Then
-                    numFurgonetas = mtbFurgoneta.Text
-                    MsgBox("Empieza el día")
-                    gbCamiones.Visible = False
-                    moverV()
+        Try
+            If Double.Parse(mtbCamion.Text) <= 8 And Double.Parse(mtbCamion.Text) >= 0 And Not (mtbCamioneta.Text.ToString().Equals("")) Then
+                numCamiones = mtbCamion.Text
+                If Double.Parse(mtbCamioneta.Text) <= 8 And Double.Parse(mtbCamioneta.Text) >= 0 And Not (mtbCamioneta.Text.ToString().Equals("")) Then
+                    numCamionetas = mtbCamioneta.Text
+                    If Double.Parse(mtbFurgoneta.Text) <= 8 And Double.Parse(mtbFurgoneta.Text) >= 0 And Not (mtbCamioneta.Text.ToString().Equals("")) Then
+                        numFurgonetas = mtbFurgoneta.Text
+                        MsgBox("Empieza el día")
+                        gbCamiones.Visible = False
+                        moverV()
+                    Else
+                        MsgBox("El numero de furboneta tiene que de estar entre 0 y 8")
+                    End If
                 Else
-                    MsgBox("El numero de furboneta tiene que de estar entre 0 y 8")
+                    MsgBox("El numero de camionetas tiene que de estar entre 0 y 8")
                 End If
             Else
-                MsgBox("El numero de camionetas tiene que de estar entre 0 y 8")
+                MsgBox("El numero de camiones tiene que de estar entre 0 y 8")
             End If
-        Else
-            MsgBox("El numero de camiones tiene que de estar entre 0 y 8")
-        End If
+        Catch ex As Exception
+            MsgBox("Entroduce un numero en todos los campos")
+        End Try
+
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         gbSacas.Visible = False
