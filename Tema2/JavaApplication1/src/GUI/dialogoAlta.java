@@ -3,6 +3,10 @@ package GUI;
 import Datos.Cliente;
 import logica.logicaNegocio;
 import java.util.Date;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
 
 public class dialogoAlta extends javax.swing.JDialog {
    
@@ -141,4 +145,25 @@ public class dialogoAlta extends javax.swing.JDialog {
     private javax.swing.JTextField jTextFieldApellidos;
     private javax.swing.JTextField jTextFieldNombre;
     // End of variables declaration//GEN-END:variables
+
+    public JSpinner getjSpinnerFecha() {
+        return jSpinnerFecha;
+    }
+
+    public JTextField getjTextFieldApellidos() {
+        return jTextFieldApellidos;
+    }
+
+    public JTextField getjTextFieldNombre() {
+        return jTextFieldNombre;
+    }
+
+    public JButton getjButtonAlta() {
+        return jButtonAlta;
+    }
+
+    public JComboBox<String> getjComboBoxProvincia() {
+        return jComboBoxProvincia;
+    }
+
 }
