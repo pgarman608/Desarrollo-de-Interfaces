@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="2a.jugadores_equipo.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="014916b3-cd81-4ec0-94bd-05e44896a297">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="188"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Equipo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM JUGADORES where nombre_equipo = $P{Equipo};]]>
+	</queryString>
+	<field name="codigo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Procedencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Altura" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Peso" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Posicion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre_equipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="23" width="185" height="33" uuid="8d874d04-5573-437f-b10e-83346b9ed60a"/>
+				<textElement>
+					<font fontName="Consolas" size="18"/>
+				</textElement>
+				<text><![CDATA[Lista de jugadores]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="-1" width="161" height="80" uuid="b04fbbe2-7b92-455c-8a68-0ab34f84a0c3"/>
+				<imageExpression><![CDATA[".//nba.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="359" y="3" width="34" height="20" uuid="be4a2308-319e-4df7-9439-f684e6a976f0"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[PGM]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="393" y="3" width="162" height="20" uuid="47ed46c9-f061-46ce-b962-a058b4ad3b5b"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="438" y="15" width="100" height="20" uuid="9092690f-5fba-4a3d-95b9-f21534343d31"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Equipo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="254327db-522c-4ec5-950e-d231bf5b7b77"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="1" width="90" height="20" uuid="2905c601-0ec8-4eac-bc48-595d58cc8410"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre_equipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="1" width="55" height="20" uuid="8c84a1d1-493d-44a9-a548-7e77ee344015"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Posicion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="50" height="20" uuid="7ecc71a0-da0e-4275-af65-bd98f7b20992"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Peso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="f3f1bab2-5b71-4bf5-8b65-9dfb64093f92"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="60" height="20" uuid="4a966a88-4518-4873-a482-f2518ee90b65"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Altura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="7c4e4bbb-ef26-49d6-9d32-139788d10f06"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Procedencia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="300" y="1" width="60" height="20" uuid="563a115b-5233-4c67-89f2-913440257426"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Altura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="540434b8-225a-4348-846b-2df4843985b6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="1" width="90" height="20" uuid="31c0ead2-f240-410e-9fdf-66d9c91c9745"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre_equipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="1" width="100" height="20" uuid="b56344ce-84ae-4d0c-adc5-45a17e50783b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Procedencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="1" width="55" height="20" uuid="65d8d0b6-5d7d-4d97-a371-f0d766bde31c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Posicion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="1" width="50" height="20" uuid="e17baf0b-4558-4e8d-a06a-107dcc32ecea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Peso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="1" width="100" height="20" uuid="c6fb9c9c-00f5-4f66-8ea4-54ae3ff8df15"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="469" y="17" width="16" height="20" uuid="a92b443a-1d4d-4291-b569-de154f36c46a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="365" y="17" width="45" height="20" uuid="530cc61d-9919-4b02-a5d1-b3e98b16dc5f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Pagina:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="17" width="59" height="20" uuid="bb7978b6-411c-4f65-986d-64cbbca5b497"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="485" y="17" width="53" height="20" uuid="53873429-0759-4e8b-9efa-41e8684413e3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

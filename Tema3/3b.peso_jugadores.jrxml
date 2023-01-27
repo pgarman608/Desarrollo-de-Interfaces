@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="3b.peso_jugadores.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a8166e1-d2b5-4664-ad0e-53188235f19b">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Equipo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from jugadores where nombre_equipo = $P{Equipo}]]>
+	</queryString>
+	<field name="codigo" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Procedencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Altura" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Peso" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Posicion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Nombre_equipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="148" y="20" width="407" height="28" uuid="c16058d6-ff12-4929-b84a-cbfa06988e54"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Grafico del peso de los jugadores de un equipo]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="148" height="79" uuid="9f1f693f-3f6f-498f-a2c2-c38c41277dbe"/>
+				<imageExpression><![CDATA[".//nba.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="359" y="0" width="34" height="20" uuid="d87eb581-6355-437b-8b88-1a3d9ce3b443"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[PGM]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="393" y="0" width="162" height="20" uuid="8118026c-5d19-4ee6-bb8f-e643cdae6226"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="455" splitType="Stretch">
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="1be4ba84-c033-4eec-a86a-989a4868adec"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre_equipo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="20" uuid="77d89c89-4ca0-4939-b64f-b00c95a91a99"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre del equipo]]></text>
+			</staticText>
+			<barChart>
+				<chart>
+					<reportElement x="0" y="20" width="555" height="320" uuid="a10e7d26-45f5-4389-8709-93c0d29f215d"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Peso"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{Nombre}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Peso}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot orientation="Horizontal"/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

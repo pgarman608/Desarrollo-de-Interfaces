@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="1c.peso_medio.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="21af222a-ed43-422c-882c-0cae0a4fad23">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select AVG(peso),Nombre_equipo,sum(peso) as sum_peso,count(*) as npesos from jugadores group by Nombre_equipo;]]>
+	</queryString>
+	<field name="AVG(peso)" class="java.math.BigDecimal"/>
+	<field name="Nombre_equipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sum_peso" class="java.math.BigDecimal"/>
+	<field name="npesos" class="java.lang.Long"/>
+	<variable name="AVG(peso)_1" class="java.math.BigDecimal" calculation="Average">
+		<variableExpression><![CDATA[$F{AVG(peso)}]]></variableExpression>
+	</variable>
+	<variable name="npesos_1" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{npesos}]]></variableExpression>
+	</variable>
+	<variable name="sumapesos" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sum_peso}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="127" y="23" width="184" height="31" uuid="ce2046fc-31ec-45fb-8ba1-77eca778cfbd"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Lista de pesos medios]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="127" height="79" uuid="c4ec1790-e4b6-4061-a29d-31b5ad6834f6"/>
+				<imageExpression><![CDATA[".\\nba.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="393" y="3" width="162" height="20" uuid="182c62db-055c-476d-a73d-b7a1b54ef28a"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="359" y="3" width="34" height="20" uuid="fcf8c9de-31a3-4f2e-ab04-be86dc1e14a4"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[PGM]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="dc6683ed-32f6-4494-91d1-906d43584e09"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre_equipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="167" y="0" width="118" height="20" uuid="6669c15e-4d6a-47ca-b0af-0880dd1741d7"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Media de peso por equipo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="121" height="20" uuid="c14d637c-601d-4bea-8980-483d122cb953"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre_equipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="0" width="100" height="20" uuid="0781655e-dc91-43ed-866a-b7d98d3b94de"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AVG(peso)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="407" y="2" width="79" height="20" uuid="7c87bdc7-406f-4184-a0e7-7260d1b3343a"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="2" width="73" height="20" uuid="bf082fda-0db8-42d6-84d3-35209087ba92"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="362" y="2" width="63" height="20" uuid="4ab3f5ac-db43-422a-963b-f8f94c3b02d4"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Pagina:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="466" y="2" width="36" height="20" uuid="9cad8016-044d-404a-94c8-2c9ed76bc61e"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="21" y="10" width="79" height="20" uuid="6b620532-aaa4-44b0-a04c-f975d5872b01"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Peso media total]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="10" width="90" height="20" uuid="1179343d-7275-48e8-9b1e-df8e58feb1b9"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{sumapesos}/$V{npesos_1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

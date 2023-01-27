@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="4a.equipos_conferencias.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8ea8631a-3477-47c9-82ae-cf79262bcc7c">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from equipos;]]>
+	</queryString>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ciudad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Conferencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Division" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Equpos">
+		<groupExpression><![CDATA[$F{Conferencia}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement x="0" y="0" width="100" height="20" uuid="f503e9cf-7376-4a92-9770-bf5ec13c05ef"/>
+					<textElement>
+						<font fontName="Consolas" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Conferencia}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="161" y="32" width="342" height="29" uuid="8cc09e84-ca1f-4f7e-ae5c-c9292fa52118"/>
+				<textElement>
+					<font fontName="Consolas" size="18"/>
+				</textElement>
+				<text><![CDATA[Equipos agrupados por conferencia]]></text>
+			</staticText>
+			<image>
+				<reportElement x="-2" y="0" width="163" height="79" uuid="77840279-d4ef-4ebd-b93f-8150fa957afe"/>
+				<imageExpression><![CDATA["C:\\Users\\Pablo\\Documents\\IReport Ejercicios NB\\nba.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="394" y="0" width="162" height="20" uuid="da4fd4f8-34c2-4344-a101-d1d102197daa"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="0" width="34" height="20" uuid="e0665f3d-85d0-4e57-9a30-b4ed2df7e9f1"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[PGM]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="23">
+			<staticText>
+				<reportElement x="224" y="0" width="100" height="20" uuid="64e7991a-1ca6-4611-a8eb-e6ec98a9e984"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Ciudad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="124" y="0" width="100" height="20" uuid="21ce295a-ba38-4855-b2eb-eaac74eec255"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="0" width="100" height="20" uuid="4c9df2d7-459b-4490-92d3-b8f659155ed7"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Division]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="635d68e3-03d2-496d-ba9e-730a6827359b"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Conferencia]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="224" y="0" width="100" height="20" uuid="12df8757-bd5b-4e3c-804e-dd736686161e"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ciudad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="124" y="0" width="100" height="20" uuid="47423ab4-4bae-4c69-aaa5-805aa4aa7627"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="0" width="100" height="20" uuid="368f5beb-09a5-47cf-8125-0455e8cfd1a6"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Division}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="383" y="0" width="45" height="20" uuid="e54d12ef-0781-4d9d-bac3-0a903476da19"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Pagina:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="428" y="0" width="59" height="20" uuid="ae79ef20-7de9-44fa-868d-b9b3f415ffe4"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="487" y="0" width="16" height="20" uuid="b27c6ad2-bb7d-4597-ba0d-846c88ef7764"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="503" y="0" width="53" height="20" uuid="a0e1b44b-f994-43a4-8884-5dd4e5e39ff5"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
