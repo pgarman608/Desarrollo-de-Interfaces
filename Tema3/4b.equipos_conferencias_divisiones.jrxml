@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="4b.equipos_conferencias_divisiones.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="855a0ccc-a14f-49ba-b306-bc3b0a2d432e">
+	<property name="ireport.zoom" value="1.4641000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from equipos;]]>
+	</queryString>
+	<field name="Nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Ciudad" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Conferencia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Division" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Conferencia">
+		<groupExpression><![CDATA[$F{Conferencia}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement x="0" y="0" width="100" height="20" uuid="a6050b23-dab8-415d-bf34-5f3946340e32"/>
+					<textElement>
+						<font fontName="Consolas" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Conferencia}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="Division">
+		<groupExpression><![CDATA[$F{Division}]]></groupExpression>
+		<groupHeader>
+			<band height="20">
+				<textField>
+					<reportElement x="98" y="0" width="100" height="20" uuid="e97445d7-54b4-4d2e-8c38-56785375e1bf"/>
+					<textElement>
+						<font fontName="Consolas" size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Division}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="114" y="30" width="440" height="30" uuid="0ed11acb-d248-470c-9b4a-0dd288cbae97"/>
+				<textElement>
+					<font fontName="Consolas" size="18"/>
+				</textElement>
+				<text><![CDATA[Equipos agrupados por conferencia y división]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="114" height="79" uuid="b5e194b0-6474-41f2-bbd8-a0776a2ad083"/>
+				<imageExpression><![CDATA[".//nba.png"]]></imageExpression>
+			</image>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="392" y="0" width="162" height="20" uuid="547c06a8-eaf4-4741-857e-f8d2fb2ccde7"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="358" y="0" width="34" height="20" uuid="ed3f545a-7126-4f2f-8fb5-577078218e23"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[PGM]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="198" y="0" width="100" height="20" uuid="e7919696-cee7-4d03-97ca-aa5695c29534"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="0" width="100" height="20" uuid="2b037779-8597-4d26-accd-987d2ba92036"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Ciudad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="d02a61a2-0f23-4be6-a9cf-763f37d4cab7"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Conferencia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="98" y="0" width="100" height="20" uuid="9cfe8f7a-3cff-47b6-b535-3b36575bda57"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Division]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="198" y="0" width="100" height="20" uuid="39d0f510-f65d-4c84-ab46-3871d03eb9d3"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="100" height="20" uuid="804ec9d7-7b93-43c6-a111-b71c1b7d4122"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Ciudad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="381" y="5" width="45" height="20" uuid="fb74d35b-b79e-4403-bb11-e258c7466b54"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[Pagina:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="426" y="5" width="59" height="20" uuid="9c120919-d31c-4f34-8a6e-0cb9a1745d08"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="485" y="5" width="16" height="20" uuid="3a4877d3-6359-4789-8121-0032747975fa"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<text><![CDATA[de]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="501" y="5" width="53" height="20" uuid="00aa1da1-0889-46c8-b15e-7ef7d90e0add"/>
+				<textElement>
+					<font fontName="Consolas" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

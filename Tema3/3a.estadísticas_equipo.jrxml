@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="3a.estadísticas_equipo.jrxml" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bc35bccc-d0f5-48ec-8c1a-fd95f29cabe4">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="364"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Equipo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select est.*, jug.nombre_equipo, jug.nombre from estadisticas est inner join jugadores jug on (jug.codigo = est.jugador and jug.nombre_equipo = $P{Equipo}) group by jug.nombre;]]>
+	</queryString>
+	<field name="temporada" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jugador" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Puntos_por_partido" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Asistencias_por_partido" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Tapones_por_partido" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="Rebotes_por_partido" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre_equipo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="145" y="24" width="290" height="31" uuid="f811adb9-21da-49b5-97cf-b97d035743ac"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Lista de estadisticas de jugadores]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="145" height="79" uuid="d0cae627-b97c-4517-b12d-7f44a746640e"/>
+				<imageExpression><![CDATA[".//nba.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="359" y="0" width="34" height="20" uuid="7c0d4195-bf85-428d-84fe-aeb014a81a2a"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<text><![CDATA[PGM]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="393" y="0" width="162" height="20" uuid="17a6e8b5-8e6b-4b5d-b674-287b54a6fe1b"/>
+				<textElement>
+					<font fontName="Consolas" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="496" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="20" width="100" height="20" uuid="7e40398b-f2d3-4154-b8d4-573ad50dfe87"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{temporada}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="8643f3f5-5232-4109-9a10-c6d3bc6387ec"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[nombre_equipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="7ff9f825-fedb-4d23-ab47-83b43daa3f4f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[temporada]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="20" width="100" height="20" uuid="0312f635-76c1-468d-ac3a-8eeb5d38470b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="100" height="20" uuid="0b330355-fce1-4227-a864-e2af4a257b90"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_equipo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="e2f0c764-3e2a-4752-9601-f25e8bceece0"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[nombre]]></text>
+			</staticText>
+			<barChart>
+				<chart>
+					<reportElement x="0" y="40" width="555" height="369" uuid="cdda45d8-b863-4a9f-a64f-286acd1c885f"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Puntos por partido"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{nombre}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Puntos_por_partido}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Asistencias por partido"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{nombre}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Asistencias_por_partido}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA["Tapones por partido"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{nombre}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Tapones_por_partido}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot labelRotation="45.0"/>
+					<itemLabel/>
+					<categoryAxisFormat labelRotation="45.0">
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>
